@@ -8,6 +8,7 @@ public class Faculdade {
     public String nome;
     public String cnpj;
     private List<Curso> cursos;
+    private List<Professor> professores;
 
     public Faculdade (String nome, String cnpj) {
         this.cnpj = cnpj;
@@ -18,10 +19,10 @@ public class Faculdade {
         System.out.println("Curso adicionado com sucesso :" + curso.nome);
         this.cursos.add(curso);
 
-        this.listCursos();
+        this.listarCursos();
     }
 
-    public void listCursos() {
+    public void listarCursos() {
         int index = 0;
         for(Curso curso : this.cursos) {
             if(this.cursos.size() == index + 1) {
@@ -32,6 +33,24 @@ public class Faculdade {
             System.out.printf(curso.getName() + ",");
 
             index++;
+        }
+    }
+
+    public void removerCurso(Curso curso) {
+        this.cursos.remove(curso);
+    }
+
+    public void adcionarProfessor(Professor professor) {
+        this.professores.add(professor);
+    }   
+
+    public void removerProfessor(Professor professor) {
+        this.professores.remove(professor);
+    }
+
+    public void listarProfessores() {
+        for(Professor professor : this.professores) {
+            System.out.println(professor);
         }
     }
 
