@@ -13,4 +13,8 @@ public class Professor extends Pessoa{
     public void addMateria(Materia materia) {
         this.materias.add(materia);
     }
+
+    public String getNome() { 
+        return this.nome;
+    }
 }
